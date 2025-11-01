@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You for Your Feedback!</h1>
+        <p>Your feedback has been submitted successfully.</p>
+        <p><strong>Name:</strong> <span id="student-name"></span></p>
+        <p><strong>Course:</strong> <span id="course-name"></span></p>
+        <p><strong>Feedback:</strong> <span id="student-feedback"></span></p>
+        <a href="/" class="back-button">Back</a>
+    </div>
+    <script>
+        // Assuming the data is passed via query parameters or similar method
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('student-name').textContent = urlParams.get('name');
+        document.getElementById('course-name').textContent = urlParams.get('course');
+        document.getElementById('student-feedback').textContent = urlParams.get('feedback');
+    </script>
+</body>
+</html>
